@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="flex-header">
+      <label class="hide" id="user"></label>
+      <input type = "text"  value="" id = "username" placeholder="username">
+      <input type = "password" value="" id = "password" placeholder="password">
+      <input type = "button" class="btn-primary" id = "btn-login" onclick = "authenticate()" value = "login"> 
+      <input type = "button" class="btn-primary hide" id = "btn-logout" onclick = "logOut()" value = "logout"> 
+    </div>
+    <div class="flex-container">
+      <div class="content">
+        <input type = "button" id = "btn-create" class="btn-success hide" value = "create" onclick="openModalCreate()">
+          <table id="datatable">
+            <tr>
+              <th>Username</th>
+              <th>Role</th>
+              <th>Action</th>
+            </tr>
+          </table>
+      </div>
+    </div>
+    <div class="flex-footer">
+      <p>@mandarin</p>
+    </div>
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+      <div class="header">
+        <label id="modal-header"></label>
+        <span id="closeModal" class="close" onclick="cancel()">&times;</span>
+      </div>
+      <div class="content">
+        <input type = "text"  class="hide" id = "input-modal-id">
+        <input type = "text"  id = "input-modal-username" placeholder="username">
+        <input type = "password" id = "input-modal-password" placeholder="password">
+        <select id="modal-role">
+        </select>
+      </div>
+      <div class="footer">
+        <input type = "button" id="btn-ok" class="btn-primary" value = "ok" onclick="submit()"> 
+        <input type = "button"  class="btn-secondary" value = "cancel" onclick="cancel()"> 
+      </div>
+    </div>
+  </div>
+    <script src="/script/axios.min.js"></script>
+    <script src="/script/Rx.min.js"></script>
+    <script src="/script/vanilla.js"></script>
+  </body>
+</html>
